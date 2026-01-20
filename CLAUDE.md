@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 KEMOTAG is a digital business card exchange web app for doujin events and meetups. Users can create public profiles (digital business cards) and share them via URL/QR code. The MVP focuses on quick SNS (primarily X/Twitter) navigation from mobile devices.
 
-See `docs/spec.md` for complete MVP specification.
+See `docs/spec.md` for complete MVP specification. for the TODOs to be addressed, refer to `docs/todo.md`.
 
 ## Technology Stack
 
@@ -39,8 +39,14 @@ bun lint
 ### Basic Principles
 
 1. **Present changes in diff format** (exception: new file creation)
-2. **Always state the reason for the change**: “Why this change is necessary”
-3. **Clearly specify the scope of impact**: “Files/functions affected by this change”
+2. **Always state the reason for the change**: "Why this change is necessary"
+3. **Clearly specify the scope of impact**: "Files/functions affected by this change"
+
+### Task Management
+
+* **MUST update `docs/todo.md` when tasks are completed**: Change `- [ ]` to `- [x]` for completed tasks
+* This ensures progress tracking and visibility of what has been accomplished
+* Update the todo list immediately after completing each task
 
 ### Prohibited Actions
 
@@ -64,7 +70,9 @@ bun lint
 - **Trailing commas**: Always
 - **Import organization**: Automatic via Biome
 
-Run `bun lint` before committing. Biome enforces Next.js and React recommended rules.
+Code formatting runs automatically via hooks. Run `bun lint` to check for issues. Biome enforces Next.js and React recommended rules.
+
+Do not perform linter behavior. Delegate all linting to biome.
 
 ## Architecture
 
@@ -100,8 +108,6 @@ Run `bun lint` before committing. Biome enforces Next.js and React recommended r
     - Implement only what is strictly required for the current task; do not add speculative features or 'just-in-case' generalizations.
 
 #### SOLID Principle
-
-*Adopt only the effective ones among the five principles.*
 
 - SRP (Single Responsibility Principle)
     - A single module (file/function/component) should be changed for only one reason.

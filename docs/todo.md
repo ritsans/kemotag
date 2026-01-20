@@ -3,10 +3,10 @@
 ## Phase 1: 基盤構築
 
 ### 1.1 プロジェクト初期設定
-- [ ] Next.js 16 App Router の基本構造確認
-- [ ] Tailwind CSS v4 の設定確認・調整
-- [ ] パスエイリアス（`@/*`）の動作確認
-- [ ] Biome によるリント・フォーマット設定の確認
+- [x] Next.js 16 App Router の基本構造確認
+- [x] Tailwind CSS v4 の設定確認・調整
+- [x] パスエイリアス（`@/*`）の動作確認
+- [x] Biome によるリント・フォーマット設定の確認
 
 ### 1.2 Supabase セットアップ
 - [ ] Supabase プロジェクト作成（CLI経由）
