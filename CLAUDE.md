@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+**IMPORTANT:** This document is written in English, but always make an effort to communicate with users in **Japanese**.
+
 ## Project Overview
 
 KEMOTAG is a digital business card exchange web app for doujin events and meetups. Users can create public profiles (digital business cards) and share them via URL/QR code. The MVP focuses on quick SNS (primarily X/Twitter) navigation from mobile devices.
@@ -15,7 +17,7 @@ See `docs/spec.md` for complete MVP specification.
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS v4
 - **Linter/Formatter**: Biome *(not ESLint/Prettier)*
-- **Database**: Not yet implemented (will require cloud DB for profiles/bookmarks + IndexedDB for local data)
+- **Database**: Supabase (Cloud project via Supabase CLI) + IndexedDB for local data
 
 ## Development Commands
 
@@ -31,9 +33,6 @@ bun start
 
 # Lint and check code
 bun lint
-
-# Format code
-bun format
 ```
 ## Rules for Implementation and Revision Proposals
 
