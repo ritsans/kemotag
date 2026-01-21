@@ -10,7 +10,7 @@
 
 ### 1.2 Supabase セットアップ
 - [x] Supabase プロジェクト作成（CLI経由）
-- [ ] 認証設定（ソーシャルログイン: X/Google等）
+- [ ] 認証設定（マジックリンク / Email Auth）
 - [x] データベーススキーマ作成
   - [x] `profiles` テーブル（profile_id, owner_user_id, display_name, avatar_url, x_username, created_at, updated_at）
   - [x] `bookmarks` テーブル（user_id, profile_id, deleted_at, created_at, updated_at）
@@ -25,12 +25,18 @@
 
 ## Phase 2: 認証・プロフィール作成機能
 
-### 2.1 認証フロー
+### 2.1 認証フロー（マジックリンク）
+- [ ] Supabase Auth 設定（Email / マジックリンク）
+  - [ ] Supabase Local Development セットアップ（`supabase start`）
+  - [ ] Email Auth プロバイダー有効化
+  - [ ] Inbucket でローカルメール確認環境構築
 - [ ] ログインページ作成
-- [ ] Supabase Auth 統合
+- [ ] マジックリンク送信フォーム実装（メールアドレス入力）
+- [ ] マジックリンク認証コールバック処理
 - [ ] 初回ログイン時の `profiles` レコード自動作成
   - [ ] `profile_id` 生成（base62 ランダム15文字、暗号学的に安全）
   - [ ] `owner_user_id` 設定
+- [ ] 認証状態管理（ログイン/ログアウト）
 
 ### 2.2 プロフィール編集機能
 - [ ] プロフィール編集ページ作成（`/edit` または `/settings/profile`）
@@ -97,6 +103,25 @@
 - [ ] プロフィール共有用QRコード生成
 - [ ] URL コピー機能
 - [ ] SNS共有ボタン（オプション）
+
+---
+
+## Phase 7: 認証方式の拡張（本番リリース前）
+
+### 7.1 Google OAuth 追加
+- [ ] Supabase Auth 設定（Google OAuth）
+  - [ ] Supabase ダッシュボードで Google OAuth プロバイダー有効化
+  - [ ] Google Cloud Console で OAuth 2.0 クライアント ID 作成
+  - [ ] 本番ドメインのリダイレクト URI 設定
+- [ ] ログインページに Google ログインボタン追加
+- [ ] 既存のマジックリンク認証との統合
+- [ ] 認証プロバイダー選択 UI の実装
+
+---
+
+## 将来の拡張（MVP後）
+
+（認証関連の追加予定はなし）
 
 ---
 
