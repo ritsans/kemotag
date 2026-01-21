@@ -9,17 +9,17 @@
 - [x] Biome によるリント・フォーマット設定の確認
 
 ### 1.2 Supabase セットアップ
-- [ ] Supabase プロジェクト作成（CLI経由）
+- [x] Supabase プロジェクト作成（CLI経由）
 - [ ] 認証設定（ソーシャルログイン: X/Google等）
-- [ ] データベーススキーマ作成
-  - [ ] `profiles` テーブル（profile_id, owner_user_id, display_name, avatar_url, x_username, created_at, updated_at）
-  - [ ] `bookmarks` テーブル（user_id, profile_id, deleted_at, created_at, updated_at）
-  - [ ] RLS（Row Level Security）ポリシー設定
+- [x] データベーススキーマ作成
+  - [x] `profiles` テーブル（profile_id, owner_user_id, display_name, avatar_url, x_username, created_at, updated_at）
+  - [x] `bookmarks` テーブル（user_id, profile_id, deleted_at, created_at, updated_at）
+  - [x] RLS（Row Level Security）ポリシー設定
 
 ### 1.3 IndexedDB セットアップ
-- [ ] IndexedDB ラッパー/ユーティリティ作成
-- [ ] `view_history` ストア定義（profile_id, last_viewed_at, display_name, x_username）
-- [ ] `saved_local` ストア定義（profile_id, deleted_at, updated_at）
+- [x] IndexedDB ラッパー/ユーティリティ作成
+- [x] `view_history` ストア定義（profile_id, last_viewed_at, display_name, x_username）
+- [x] `saved_local` ストア定義（profile_id, deleted_at, updated_at）
 
 ---
 
