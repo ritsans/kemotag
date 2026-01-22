@@ -17,7 +17,7 @@
 
 ### 1.2 Supabase セットアップ
 - [x] Supabase プロジェクト作成（CLI経由）
-- [ ] 認証設定（マジックリンク / Email Auth）
+- [x] 認証設定（マジックリンク / Email Auth）実装完了（Dashboard設定は手動で実施）
 - [x] データベーススキーマ作成
   - [x] `profiles` テーブル（profile_id, owner_user_id, display_name, avatar_url, x_username, created_at, updated_at）
   - [x] `bookmarks` テーブル（user_id, profile_id, deleted_at, created_at, updated_at）
@@ -43,14 +43,14 @@
 - [ ] テスト用メールアドレス準備（Gmail+エイリアス推奨）
 
 #### 認証機能実装
-- [ ] ログインページ作成（`/login` または `/auth/login`）
-- [ ] マジックリンク送信フォーム実装（メールアドレス入力）
-- [ ] マジックリンク認証コールバック処理（`/auth/callback`）
-- [ ] 初回ログイン時の `profiles` レコード自動作成
-  - [ ] `profile_id` 生成（base62 ランダム15文字、暗号学的に安全）
-  - [ ] `owner_user_id` 設定
-- [ ] 認証状態管理（ログイン/ログアウト）
-- [ ] 認証ガード実装（未ログイン時のリダイレクト）
+- [x] ログインページ作成（`/login` または `/auth/login`）
+- [x] マジックリンク送信フォーム実装（メールアドレス入力）
+- [x] マジックリンク認証コールバック処理（`/auth/callback`）
+- [x] 初回ログイン時の `profiles` レコード自動作成
+  - [x] `profile_id` 生成（base62 ランダム15文字、暗号学的に安全）
+  - [x] `owner_user_id` 設定
+- [x] 認証状態管理（ログイン/ログアウト）
+- [x] 認証ガード実装（未ログイン時のリダイレクト）
 
 ### 2.2 プロフィール編集機能 
 - [ ] プロフィール編集ページ作成（`/edit` または `/settings/profile`）
