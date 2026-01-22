@@ -1,22 +1,9 @@
 # KEMOTAG MVP 開発TODO
 
-## 開発環境について
+## 開発方針
 
-### 🐧 WSL2環境（現在の開発環境）
-- **方針**: Supabase Cloud環境のみを使用
-- **理由**: WSL2 + Docker はリソース消費が大きいため
-- **制約**:
-  - マジックリンクテストに実際のメールアドレスが必要
-  - オフライン開発不可
-- **対象フェーズ**: Phase 1〜7 すべて
-
-### 🍎 Macbook環境（将来の開発環境）
-- **方針**: Supabase Local Development（Docker）の導入
-- **メリット**:
-  - Inbucketによる高速な認証テスト
-  - オフライン開発可能
-  - 破壊的テストが安全
-- **対象**: 認証テストの効率化、Migration開発
+- **Supabase**: 全てクラウドベース (Supabase Cloud) で管理
+- **認証テスト**: 実際のメールアドレスを使用
 
 ---
 
@@ -30,7 +17,7 @@
 
 ### 1.2 Supabase セットアップ
 - [x] Supabase プロジェクト作成（CLI経由）
-- [ ] 🐧 [WSL] 認証設定（マジックリンク / Email Auth）※ Cloud環境
+- [ ] 認証設定（マジックリンク / Email Auth）
 - [x] データベーススキーマ作成
   - [x] `profiles` テーブル（profile_id, owner_user_id, display_name, avatar_url, x_username, created_at, updated_at）
   - [x] `bookmarks` テーブル（user_id, profile_id, deleted_at, created_at, updated_at）
@@ -47,18 +34,13 @@
 
 ### 2.1 認証フロー（マジックリンク）
 
-#### 🐧 [WSL] Supabase Cloud での認証設定
+#### 認証設定
 - [ ] Supabase Dashboard で Email Auth（マジックリンク）有効化
 - [ ] リダイレクトURL設定（`http://localhost:3000/auth/callback` など）
 - [ ] 環境変数確認（`.env.local`）
   - [ ] `NEXT_PUBLIC_SUPABASE_URL`
   - [ ] `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - [ ] テスト用メールアドレス準備（Gmail+エイリアス推奨）
-
-#### 🍎 [Mac] Supabase Local Development 設定
-- [ ] Supabase Local Development セットアップ（`supabase start`）
-- [ ] Inbucket でローカルメール確認環境構築
-- [ ] Local/Cloud 環境の切り替え設定
 
 #### 認証機能実装
 - [ ] ログインページ作成（`/login` または `/auth/login`）
@@ -81,7 +63,7 @@
 
 ---
 
-## Phase 3: 公開プロフィール表示 🔄 [共通]
+## Phase 3: 公開プロフィール表示
 
 ### 3.1 公開プロフィールページ
 - [ ] `/p/[profile_id]` ルート作成
@@ -100,7 +82,7 @@
 
 ---
 
-## Phase 4: お気に入り機能 🔄 [共通]
+## Phase 4: お気に入り機能
 
 ### 4.1 お気に入りUI
 - [ ] 公開プロフィールページにお気に入りボタン追加
