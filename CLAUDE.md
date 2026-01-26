@@ -65,15 +65,20 @@ bun lint
 
 **IMPORTANT**: This project uses Biome, not ESLint or Prettier.
 
+- Code rules are defined under the `"javascript"` key in `biome.json`.
+
+---
 - **Indentation**: 2 spaces
 - **Semicolons**: As needed (ASI)
 - **Quotes**: Double quotes
 - **Trailing commas**: Always
 - **Import organization**: Automatic via Biome
+このルールはbiome.jsonに記述されており、省略可能である。
+---
 
-Code formatting runs automatically via hooks. Run `bun lint` to check for issues. Biome enforces Next.js and React recommended rules.
-
-Do not perform linter behavior. Delegate all linting to biome.
+* Code formatting runs automatically via hooks. Run `bun lint` to check for issues. 
+* Biome enforces Next.js and React recommended rules.
+* Do not perform linter behavior. Delegate all linting to biome.
 
 ## Architecture
 
@@ -99,20 +104,19 @@ Do not perform linter behavior. Delegate all linting to biome.
 
 #### Core Rules
 
-- DRY (Don't Repeat Yourself)
+- **DRY** (Don't Repeat Yourself)
 
     * Tailwind CSS: allow class duplication up to **two occurrences**.
     * TypeScript: consolidate identical type definitions from the first occurrence (`types/` or `lib/types`).
     * Validation: authorization, input validation, and ID generation must be implemented in a single centralized location from the start.
 
-
-- KISS (Keep It Simple, Stupid)
+- **KISS** (Keep It Simple, Stupid)
 
     * Align with standard **Next.js patterns**.
     * Do not arbitrarily introduce custom DI containers or complex design patterns.
     * Do not add state management until it becomes necessary.
 
-- YAGNI (You Ain't Gonna Need It)
+- **YAGNI** (You Ain't Gonna Need It)
 
     * **Do not create unused extension points.**
     * Do not add unused parameters, generic interfaces, configuration options, or abstract layers that suggest support for multiple providers.
