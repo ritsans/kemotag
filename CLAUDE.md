@@ -36,6 +36,7 @@ bun lint
 ```
 ## Rules for Implementation and Revision Proposals
 
+
 ### Basic Principles
 
 1. **Present changes in diff format** (exception: new file creation)
@@ -99,21 +100,38 @@ Do not perform linter behavior. Delegate all linting to biome.
 #### Core Rules
 
 - DRY (Don't Repeat Yourself)
-    - Identify and abstract redundant logic into reusable functions or modules to ensure a Single Source of Truth.
+
+    * Tailwind CSS: allow class duplication up to **two occurrences**.
+    * TypeScript: consolidate identical type definitions from the first occurrence (`types/` or `lib/types`).
+    * Validation: authorization, input validation, and ID generation must be implemented in a single centralized location from the start.
+
 
 - KISS (Keep It Simple, Stupid)
-    - Prioritize simple, idiomatic, and readable code over clever hacks or overly complex abstractions.
+
+    * Align with standard **Next.js patterns**.
+    * Do not arbitrarily introduce custom DI containers or complex design patterns.
+    * Do not add state management until it becomes necessary.
 
 - YAGNI (You Ain't Gonna Need It)
-    - Implement only what is strictly required for the current task; do not add speculative features or 'just-in-case' generalizations.
 
-#### SOLID Principle
+    * **Do not create unused extension points.**
+    * Do not add unused parameters, generic interfaces, configuration options, or abstract layers that suggest support for multiple providers.
+    * If something appears necessary, stop at a *proposal* rather than an *implementation*, and ask for user instructions. At the same time, always verify whether it falls within the scope of `docs/spec.md` as justification.
+
+### SOLID Principle
 
 - SRP (Single Responsibility Principle)
-    - A single module (file/function/component) should be changed for only one reason.
 
+    * Do not mix “presentation” and “data fetching / side effects” within components.
+    * Keep Route Handlers as a simple single flow:
+         “input validation → authorization → processing → response”. If they become complex, extract the logic into `lib/`.
+    
 - OCP (Open–Closed Principle)
-    - Design the structure so that new behavior can be added without breaking existing code.
+
+    * **Limit to only what is confirmed to truly increase.**
+    * Do not build generic plugin architectures or abstract base classes.
+    * Do not introduce large-scale abstractions in anticipation of unknown future requirements.
+
 
 #### Project Rules
 
